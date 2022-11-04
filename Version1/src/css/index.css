@@ -1,0 +1,147 @@
+.fleft {
+    float:left; 
+    width: 50%;
+    background-color: lightblue;
+    border-style: solid;
+    border-color: red;
+    height: 400px;
+    padding: 5px;
+}
+
+.fright {
+    float: right;
+    background-color: lightgreen;
+    border-style: solid;
+    border-color: red;
+    height: 400px;
+    width: 50%;
+    padding: 5px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: red;
+}
+
+/* Reset browser styles
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  line-height: 1.5;
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 100px;
+  margin:  0 auto;
+  padding: 0 10px;
+} */
+
+/* Header */
+.section-header{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background-color: #333333;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-align: center;
+}
+
+/* Land Form Section */
+form {
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+input[type=button]{
+    border: 1px solid #333333;
+    background-color: #333333;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Land details section */
+.land-detail-section{
+  display: none; /* hidden by default */
+}
+
+.land-details {
+  margin-bottom: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.land-detail-heading {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.section-footer{
+  display: flex;
+  gap: 12px;
+}
+
+.show-land-form-btn, .refresh-land-details-btn{
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.show-land-form-btn{
+  background-color: #4CAF50;
+}
+
+.refresh-land-details-btn{
+  background-color: #00a8ff;
+}

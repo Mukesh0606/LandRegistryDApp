@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Land Registry Blockchain DApp</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="../css/buyer.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container" style="width: 1500px;">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center">Query Processing on Land Registry Blockchain</h1>
+          <hr/>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./seller.html">Seller</a></li>
+            <li><a href="#buyer" class="active">Buyer</a></li>
+            <li><a href="./officer.html">G.Officer</a></li>
+          </ul>
+          <br />
+          <button class="tablink" onclick="openSection('viewall', this, 'red')" id="defaultOpen">View All</button>
+          <button class="tablink" onclick="openSection('addland', this, 'green')">Add Land</button>
+          <button class="tablink" onclick="openSection('searchland', this, 'yellow')">Search Land</button>
+          <button class="tablink" onclick="openSection('todaytx', this, 'blue')">Today's Transactions</button>
+          <button class="tablink" onclick="openSection('monthtx', this, 'orange')">Monthly Transactions</button> 
+          <br/>
+          
+          <div id="viewall" class="tabcontent">
+            <h1>List of all Land Documents in DApp </h1><hr/>
+            <table>
+              <tr>
+                <th>Survey No.</th>
+                <th>Owner Name</th>
+                <th>Area (sq-ft)</th>
+                <th>Location</th>
+                <th>Jurisdiction</th>
+              </tr>
+              <tr>
+                <td>54</td>
+                <td>Smith</td>
+                <td>50</td>
+                <td>Puttaparthi</td>
+                <td>Ananthapur</td>
+              </tr>
+              <tr>
+                <td>123</td>
+                <td>Jackson</td>
+                <td>94</td>
+                <td>Puttaparthi</td>
+                <td>Sathya Sai</td>
+              </tr>
+            </table>
+          </div>
+
+          <div id="addland" class="tabcontent">
+            <div>
+              <section class="land-form-section">
+                <section class="section-header">
+                <h1>Land Details</h1>
+                </section>
+                <!-- Form -->
+                <form>
+                <label for="survey-number">Survey Number</label>
+                <input type="text" id="survey-number" />
+                <label for="owner-name">Owner Name</label>
+                <input type="text" id="owner-name" />
+                <label for="area-sq-ft">Area (sq-ft)</label>
+                <input type="text" id="area-sq-ft" />
+                <label for="location">Location</label>
+                <input type="text" id="location" />
+                <label for="jurisdiction">Jurisdiction</label>
+                <input type="text" id="jurisdiction" />
+                <input type="button" value="Submit" id="set-new-land" />
+                </form>
+              </section>        
+            </div>
+            <div>
+              <br />
+              <!-- Land details section -->
+              <section class="land-detail-section">
+                <section class="section-header">
+                  <h1>Land Details</h1>
+                </section>
+                <section class="land-details">
+                  <h3 class="land-detail-heading">
+                      Survey Number:
+                      <span class="land-data land-detail-survey"></span>
+                  </h3>
+                  <h3 class="land-detail-heading">
+                      Owner Name:
+                      <span class="land-data land-detail-owner"></span>
+                  </h3>
+                  <h3 class="land-detail-heading">
+                      Area (sq-ft):
+                      <span class="land-data land-detail-area"></span>
+                  </h3>
+                  <h3 class="land-detail-heading">
+                    Location:
+                    <span class="land-data land-detail-location"></span>
+                  </h3>
+                  <h3 class="land-detail-heading">
+                    Jurisdiction:
+                    <span class="land-data land-detail-jurisdiction"></span>
+                  </h3>
+                </section>
+                <section class="section-footer">
+                  <button class="show-land-form-btn">Set New Land</button>
+                  <button class="refresh-land-details-btn">Refresh</button>
+                </section>
+              </section>
+            </div>
+          </div>
+
+          <div id="searchland" class="tabcontent">
+            <h1>Searching for a Land </h1>
+            <form name="form1" id="form1" action="/action_page.php">
+              <div class="Srow">
+                <div class="col-10">
+                  <label for="Area">Jurisdiction : </label>
+                </div>
+                <div class="col-20">
+                  <select name="juris" id="juris">
+                    <option value="" selected="selected">Select Jurisdiction </option>
+                  </select>
+                </div>
+                <div class="col-10">
+                  <label for="Area">Location : </label>
+                </div>
+                <div class="col-20">
+                  <select name="location" id="location">
+                    <option value="" selected="selected">Select Location </option>
+                  </select>
+                </div> 
+                <div class="col-10">
+                  <label for="Area">Area : </label>
+                </div>
+                <div class="col-10">
+                  <select name="area-sq-ft" id="area-sq-ft">
+                    <option value="" selected="selected">Select Area size (sq-ft)</option>
+                  </select>
+                </div>   
+              </div>
+              <div class="Srow">
+                <div class="col-10">
+                  <!-- <label for="ownername">Owner Name</label> -->
+                </div>
+                <div class="col-20">
+                  <!-- <input type="text" id="ownername" name="ownername"> -->
+                </div>
+                <div class="Srow">
+                  <input type="submit1" value="Submit">
+                </div> 
+              </div>   
+            </form> 
+          </div>
+        
+          <div id="todaytx" class="tabcontent">
+            <h1>Today's Land Transactions </h1>
+            <table>
+              <tr>
+                <th>Survey No.</th>
+                <th>Owner Name</th>
+                <th>Area (sq-ft)</th>
+                <th>Location</th>
+                <th>Jurisdiction</th>
+              </tr>
+              <tr>
+                <td>54</td>
+                <td>Smith</td>
+                <td>50</td>
+                <td>Puttaparthi</td>
+                <td>Ananthapur</td>
+              </tr>
+              <tr>
+                <td>123</td>
+                <td>Jackson</td>
+                <td>94</td>
+                <td>Puttaparthi</td>
+                <td>Sathya Sai</td>
+              </tr>
+            </table>
+          </div>
+        
+          <div id="landdetails" class="tabcontent">
+            <h1>Land Details</h1>
+            <form name="form1" id="form1" action="/action_page.php">
+              <div class="Srow">
+                <div class="col-10">
+                  <label for="Area">Jurisdiction : </label>
+                </div>
+                <div class="col-20">
+                  <select name="juris" id="juris">
+                    <option value="" selected="selected">Select Jurisdiction </option>
+                  </select>
+                </div>
+                <div class="col-10">
+                  <label for="Area">Location : </label>
+                </div>
+                <div class="col-20">
+                  <select name="location" id="location">
+                    <option value="" selected="selected">Select Location </option>
+                  </select>
+                </div> 
+                <div class="col-10">
+                  <!-- <label for="Area">Area : </label> -->
+                </div>
+                <div class="col-10">
+                  <!-- <select name="area-sq-ft" id="area-sq-ft">
+                    <option value="" selected="selected">Select Area size (sq-ft)</option>
+                  </select> -->
+                </div>   
+              </div>
+              <div class="Srow">
+                <div class="col-10">
+                  <label for="surveyno">Survey No.</label>
+                </div>
+                <div class="col-20">
+                  <input type="text" id="surveyno" name="surveyno">
+                </div>
+                <div class="Srow">
+                  <input type="submit1" value="Get Land Details">
+                </div> 
+              </div>   
+            </form> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/web3.min.js"></script>
+    <script src="../js/truffle-contract.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/buyer.js"></script>
+  </body>
+</html>
